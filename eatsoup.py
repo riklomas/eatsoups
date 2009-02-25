@@ -36,7 +36,7 @@ def sendtotwitter(simple, bold):
 	values = { "status" : status }
 	data = urllib.urlencode(values)
 	req = urllib2.Request('http://twitter.com/statuses/update.xml', data)
-	base64string = base64.encodestring('%s:%s' % ('eatsoups', 'm0v1ngserver!'))[:-1]
+	base64string = base64.encodestring('%s:%s' % ('eatsoups', 'PASSWORD'))[:-1]
 	req.add_header("Authorization", "Basic %s" % base64string)
 	response = urllib2.urlopen(req)
 	the_page = response.read()
